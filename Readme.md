@@ -19,7 +19,7 @@ Current version: **1.0**
 # Usage
 
 you can specify a name for your service in the config file "config/routes.php", just adding a line to the routes array, 
-and add into the calling function a conditional to the parse the params and the logic for call the controllers
+and add into the calling function a conditional to parse the params and the logic for call the controllers
 
 ```php
 $routes = array("service_greet" => 0);
@@ -43,6 +43,7 @@ class user_controller {
 }
 ```
 and call the service: 
+
 yourdomain.com/services.php?q=service_greet&params={"user":"Nick","surname":"Goz"}
 
 You can notice that the server is not printing the answers like JSON files, you can change that just turning out the returned result to a Json file
@@ -94,7 +95,7 @@ class user_controller {
 ### Is it done?
 
 No, is just a basic contruction of an MVC arquitecture for the people which is not familiar or dont want to use a big framework,
-this is just an scaffold and the objetive is to construct an easy way to work with PHP and REST in a cleaning way.
+PHP-Rest is just an scaffold and the objetive was to create a tool to work with PHP and REST in a cleaning way.
 
 
 ### where should I write the tests?
