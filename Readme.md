@@ -1,5 +1,4 @@
 
-
 <img align="right" src="https://raw.github.com/hueniverse/iron/master/images/logo.png" /> **PHP-Rest** is a web server writted in PHP with a MVC arquitecture to call REST methods in an easy way, without suffering and headaches.
 Current version: **1.0**
 
@@ -21,17 +20,17 @@ Current version: **1.0**
 
 # Usage
 
-you can specify a name for your service in the config file "config/routes.php", just adding this one to the routes array, 
-and adding into the calling function a conditional to the params parser and the logic to call the controllers
+you can specify a name for your service in the config file "config/routes.php", just adding a line to the routes array, 
+and add into the calling function a conditional to the parse the params and the logic for call the controllers
 
 ```php
 $routes = array("service_greet" => 0);
 
 if($id==0){ 
-    $params = json_decode(stripslashes($json));
-    $user = $params->{'user'};
-    $surn = $params->{'surname'};
-    return user_controller::greet( $user, $surn );
+  $params = json_decode(stripslashes($json));
+  $user = $params->{'user'};
+  $surn = $params->{'surname'};
+  return user_controller::greet( $user, $surn );
 }
 ```
 after this one, you can specify the actions in your controllers same way as an MVC architecture
@@ -39,10 +38,10 @@ after this one, you can specify the actions in your controllers same way as an M
 ```php
 
 class user_controller {
-    function greet( $name, $surn ) {
-        $full_name = $name." ".$surn;
-        return "Hello ".$name;
-    }
+  function greet( $name, $surn ) {
+    $full_name = $name." ".$surn;
+    return "Hello ".$name;
+  }
 }
 ```
 and call the service: 
@@ -54,8 +53,8 @@ You can notice that the server is not printing the answers like JSON files, you 
 $routes = array("json_response" => 1);
 
 if($id==1){
-    $ans = array('response' => "everything runs smoothly", 'http_code' => 200);
-    return json_encode($ans);
+  $ans = array('response' => "everything runs smoothly", 'http_code' => 200);
+  return json_encode($ans);
 }
 ```
 
@@ -64,12 +63,12 @@ KK, but what about the models and the DB connections?, you can create a user mod
 ```php
 
 class User {
-    var $name, $surname;
+  var $name, $surname;
     
-    function __contruct($name, $surn){
-      $this->name = $name;
-      $this->surname = $surn;
-    }
+  function __contruct($name, $surn){
+    $this->name = $name;
+    $this->surname = $surn;
+  }
 }
 ```
 
@@ -78,15 +77,15 @@ class User {
 include 'db/DAO/DAO_user.php';
 
 class user_controller {
-    function suscribe( $name, $surn ) {
-        $full_name = $name." ".$surn;
-        $success = DAO_user::record_username( $full_name );
+  function suscribe( $name, $surn ) {
+    $full_name = $name." ".$surn;
+    $success = DAO_user::record_username( $full_name );
         
-        if( $success == true )
-            return "Name saved";
-        else
-            return "an error ocurred!!"
-    }
+    if( $success == true )
+      return "Name saved";
+    else
+      return "an error ocurred!!"
+  }
 }
 ```
 
