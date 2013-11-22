@@ -1,10 +1,10 @@
 <?php
   class User {
-      var $name, $surname;
+    var $name, $surname;
       
-      function __contruct($name, $surn){
-        $this->name = $name;
-        $this->surname = $surn;
-      }
+    function __contruct($name, $surn){
+      $this->name = $name;
+      $this->surname = $surn;
+    }
   }
 ?>
