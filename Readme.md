@@ -1,5 +1,5 @@
 <img align="right" src="https://raw.github.com/hueniverse/iron/master/images/logo.png" /> **PHP-Rest** is a web server writted in PHP with a MVC arquitecture to call REST methods in an easy way, without suffering and headaches.
-Current version: **1.0**
+Current version: **0.1**
 
 [![Build Status](https://secure.travis-ci.org/hueniverse/iron.png)](#)
 
